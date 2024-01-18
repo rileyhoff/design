@@ -1,0 +1,193 @@
+/*
+sqkz design portfolio 
+author: Riley Hoff
+shared styles
+*/
+
+:root {
+    --main-bg: #f6f6f6;
+    --dark-bg: #ebeaea;
+    --dark-bg-2: #cfcfcf;
+    --text-color: #222;
+    --accent: #e4d9d9;
+    --dark-accent: #e9e031;
+     --header-font: "felix", serif;
+     --header-font-small: "Cormorant Infant", serif;
+    --accent-font: "Noto Sans Mono", monospace;
+    --body-font: "Noto Sans Mono", monospace;
+    --text-body: 14px;
+    --text-small: 12px;
+}
+
+@font-face {
+    font-family: "felix";
+    src: url(../fonts/FELIXTI.TTF);
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    background-color: var(--main-bg, #fff);
+    color: var(--text-color, #111);
+    font-family: var(--body-font, sans-serif);
+    font-weight: 400;
+    font-style: normal;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    width: 100vw;
+    animation: fade-in 1s 0s backwards 1 linear;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+img {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f6f6f6af;
+    display: flex;
+    text-align: right;
+    /* color: var(--main-bg, #fff); */
+    z-index: 1;
+    font-family: var(--header-font);
+    /* background: rgb(255, 255, 255); */
+    /* background: linear-gradient(180deg, var(--main-bg, #fff) 0%, rgba(0, 0, 0, 0) 100%); */
+}
+
+header h1 {
+    font-size: var(--text-body);
+    font-weight: 400;
+    margin: 0;
+    padding: 20px;
+    width: calc(50% - 20px);
+}
+
+footer {
+    width: calc(100% - 80px);
+    /* background-color: var(--dark-bg, #777); */
+    background-color: #f6f6f688;
+    padding: 40px;
+    display: flex;
+}
+footer p { 
+    margin: 0; 
+    font-size: var(--text-small);
+    font-weight: 300;
+}
+
+footer>div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+footer>div>div {
+    display: flex;
+    gap: 10px;
+    margin-left: 20vw;
+    max-width: 80%;
+}
+
+footer .content {
+    font-family: var(--body-font, sans-serif);
+    font-weight: 400;
+    font-size: var(--text-small);
+    margin-top: 10px;
+    white-space: nowrap;
+}
+footer .content:hover::after, .text-link:hover::after {
+    content: " \2197";
+    display: inline;
+    line-height: 1;
+}
+
+footer .sqkz_flower, #splash .sqkz_flower {
+    width: 20px;
+    height: fit-content;
+    object-fit: contain;
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+#splash {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: var(--main-bg);
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    transform-origin: bottom;
+    color: var(--text-color);
+    font-size: var(--text-body);
+    font-family: var(--accent-font);
+    line-height: 1;
+    overflow: hidden;
+}
+#splash >  .sqkz_flower {
+    width: 30px;
+    height: 30px;
+    left: calc(50vw - 15px);
+    top: calc(25vh - 15px);
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    opacity: .5;
+    z-index: -1;
+}
+#splash.loaded {
+    animation: splash 1s 0s forwards 1  ease-in-out;
+}   
+@media only screen and (max-width: 767px){
+    footer{ margin-bottom: 40px; }
+
+    footer .content::after, .text-link::after {
+        content: " \2197";
+        display: inline;
+        line-height: 1;
+    }
+    footer>div>div { margin-left: 15vw; }
+}
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes splash {
+    from {
+        height: 100vh;
+    }
+
+    to {
+        height: 0;
+        display: none;
+    }
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SQKZ Design</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Riley Hoff">
+    <meta name="description" content="A sample of design works created by SQKZ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/shared_styles.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="css/stylish.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
+    <link rel="manifest" href="img/icons/site.webmanifest">
+    <link rel="mask-icon" href="img/icons/safari-pinned-tab.svg" color="#252323">
+    <link rel="shortcut icon" href="img/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="img/icons/browserconfig.xml">
+    <meta name="theme-color" content="#fefefe">
+    <script src="script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+Mono:wght@100..900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/sin/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="splash">
+        <img class="sqkz_flower" src="img/sqkzflower_sm.png" alt="sqkz flower logo">    
+        <span id="percent">0</span>%</div>
+    <main id="home" class="">
+        <header>
+            <h1 id="title">sqkz design</h1>
+            <a id="about_btn" class="button" onclick="about()">about &#x2197;</a>
+        </header>
+        <section id="works" class="works hide">
+            <div class="works_left">
+                <p class="works_label">works</p>
+                <ol class="works_list">
+                    <li onclick="setActiveWork(this)"
+                    data-work="artportfolio"
+                    data-img="img/art.jpg"
+                    data-color="#f0e7b3"
+                    data-meta="- Fullstack - Website Design - Studio Artwork "
+                    >
+                        <span>
+                            <h3>
+                                Art Portfolio
+                            </h3>
+                            <div class="number">01</div>
+                        </span>
+                        <a href="./works/artportfolio" class="info">
+                            <div class="mbl">
+                                <img class="work_img-mbl" src="" >
+                            </div>
+                            view project &#x2197;</a>
+                    </li>
+                    <li onclick="setActiveWork(this)"  
+                    data-work="nts"
+                    data-img="img/nts.png"
+                    data-color="#ccc"
+                    data-meta="- Mobile Redesign - Case Study "
+                    >
+                        <span>
+                            <h3>
+                                NTS Radio
+                            </h3>
+                            <div class="number">02</div>
+                        </span>
+                        <a href="./works/nts" class="info">
+                            <div class="mbl">
+                                <img class="work_img-mbl" src="" >
+                            </div>
+                            view project &#x2197;</a>
+                    </li>
+                    <li onclick="setActiveWork(this)" 
+                    data-work="scope"
+                    data-img="img\scope\NY_SCOPE_Showguide.jpg"
+                    data-color="#e9e031"
+                    data-meta="- Design Associate - Graphic Design - Print - Digital "
+                    >
+                        <span>
+                            <h3>
+                                SCOPE
+                            </h3>
+                            <div class="number">03</div>
+                        </span>
+                        <a href="./works/scope.html" class="info">                        
+                            <div class="mbl">
+                            <img class="work_img-mbl" src="" >
+                        </div>
+                        view project &#x2197;</a>
+                    </li>
+                    <li onclick="setActiveWork(this)" 
+                    data-work="frekka.html"
+                    data-img="img/frekka-1.png"
+                    data-color="#d2b4b4"
+                    data-meta="- Cargo - Website Design ">
+                        <span>
+                            <h3>
+                                Frekka
+                            </h3>
+                            <div class="number">04</div>
+                        </span>
+                        <a href="./works/frekka" class="info">                        <div class="mbl">
+                            <img class="work_img-mbl" src="">
+                        </div>
+                        view project &#x2197;</a>
+                    </li>
+                    <li onclick="setActiveWork(this)" 
+                    data-work="akog"
+                    data-img="img/akog-logo-static.png"
+                    data-color="#cfdeff"
+                    data-meta="- React.js - FullStack Development - Design "
+                    >
+                        <span>
+                            <h3>
+                                A Kind of Guise
+                            </h3>
+
+                            <div class="number">05</div>
+                        </span>
+                        <a href="./works/akog" class="info">
+                            <div class="mbl">
+                                <img class="work_img-mbl" src="">
+                            </div>view project &#x2197;</a>
+                    </li>
+                </ol>
+            </div>
+            <div id="works_right" class="works_right">
+                <div class="meta_wrap">
+                    <div class="meta scroll-text">
+                        <div class="scroll-inner">
+                            <div>
+                                <h4 id="meta-1"> Fullstack Web Development - Design - Illustation - Fullstack Web Development - Design - Illustation - Fullstack Web Development - Design - Illustation - Fullstack Web Development - Design - Illustation - Fullstack Web Development - Design - Illustation - </h4>
+                                <h4 id="meta-2"> Fullstack Web Development - Design - Illustation - Fullstack Web Development - Design - Illustation - Fullstack Web Development - Design - Illustation - Fullstack Web Development - Design - Illustation - Fullstack Web Development - Design - Illustation - </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <figure>
+                    <img id="work_img" src="" re="preload" as="image" alt="">
+                    <img class="preload" style="visibility: hidden; height: 0; width: 0;" class="art" src="img/art.jpg">
+                    <img class="preload" style="visibility: hidden; height: 0; width: 0;" class="scope" src="img\scope\NY_SCOPE_Showguide.jpg">
+                    <img class="preload" style="visibility: hidden; height: 0; width: 0;" class="nts" src="img/nts.png">
+                    <img class="preload" style="visibility: hidden; height: 0; width: 0;" class="frekka" src="img/frekka-1.png">
+                    <img class="preload" style="visibility: hidden; height: 0; width: 0;" class="akog" src="img/akog-logo-static.png">
+                    <a id="works_link" class="right_overlay"><span>View Project &#x2197;</span></a>
+                </figure>
+            </div>
+            </div>
+        </section>
+        <footer class="">
+            <img class="sqkz_flower" src="img/sqkzflower_sm.png" alt="sqkz flower logo">
+            <div>
+                <div>
+                    <p>Contact</p>
+                    <a href="mailto:rileyhoff@outlook.com">
+                        <p class="contact content">rileyhoff@outlook.com</p>
+                    </a>
+                </div>
+                <div>
+                    <p id="author_label">Author</p>
+                    <a href="RileyHoff_Resume_Sep_2023.pdf" target="_blank">
+                        <p class="author content">Riley Hoff</p>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <div id="about" class=" ">
+        <div id="about_back" class="" onclick="about()">&#x2196; Back</div>
+        <h2>About Me</h2>
+        <!-- <img id="about_photo_1" src="img/14.jpg" alt="A photo of me."> -->
+        <img id="about_photo_1" src="img/profile_iceland-6.jpg" alt="A photo of me.">
+        <p class="bio">
+            I'm an artist and creative, who's passions lie in art making and technology. Currently living and working in
+            Brooklyn, NY. I'm a graduate from the
+            University of Vermont,
+            with a dual major of studio art and computer science. My interests include but definitely are not limited
+            to,
+            art,
+            skateboarding and cooking. I strive to be unique and genuine in all that I do.
+            <br><br>SQKZ - Riley Hoff
+        </p>
+        <div id="about_bottom">
+            <img id="about_photo_2" src="img/profile_cdmx-4.jpg" alt="A second photo of me.">
+            <div id="about_footer">
+                <p class="label">Instagram</p>
+                <a href="https://www.instagram.com/sqkz_/" target="_blank" class="instagram link">
+                    <p class="instagram content text-link">@sqkz_</p>
+                </a>
+                <p class="label">Contact</p>
+                <a href="mailto:rileyhoff@outlook.com">
+                    <p class="contact content text-link">rileyhoff@outlook.com</p>
+                </a>
+                <p class="label">Author</p>
+                <a href="RileyHoff_Resume_Sep_2023.pdf" target="_blank">
+                    <p class="author content text-link">Riley Hoff</p>
+                </a>
+            </div>
+            <!-- <img class="sqkz_flower" src="img/sqkzflower_sm.png" alt="sqkz flower logo"> -->
+        </div>
+    </div>
+</body>
+<script>
+    const works = document.querySelectorAll('.works_list li');
+
+  //check when images are loaded
+  var imgs = document.images,
+    len = imgs.length,
+    counter = 0;
+    console.log(len);
+    var pChange = 100 / len;
+[].forEach.call( imgs, function( img ) {
+    if(img.complete)
+      incrementCounter();
+    else
+      img.addEventListener( 'load', incrementCounter, false );
+} );
+
+function incrementCounter() {
+    counter++;
+    if (Math.ceil(counter * pChange) < 101){
+        document.getElementById('percent').innerHTML =   Math.ceil(counter * pChange);
+    }else{document.getElementById('percent').innerHTML =   100;}
+     
+    if ( counter === len ) {
+        console.log( 'All images loaded!' );
+        document.getElementById('splash').classList.add('loaded'); //all loaded animate out the preloader 
+    }
+}
+
+    </script>
+</html>
