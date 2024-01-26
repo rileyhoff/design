@@ -67,6 +67,7 @@ p {
     border-top: 1px solid var(--dark-bg);
     cursor: pointer;
     transition: all .4s ease-in-out;
+    position: relative;
 }
 
 .works_list li>span {
