@@ -143,10 +143,6 @@ p {
     background-color: var(--accent, #777);
     transition: all .4s ease-in-out;
 }
-/* .hide .works_right {
-    transform: translateX(100%);
-    transform-origin: right;
- } */
 
 .works_right figure, .works_right .right_overlay {
     position: sticky;
@@ -418,15 +414,6 @@ h2 {
         font-size: 48px;
         line-height: 1;
     }
-
-    /* .symbol{
-        display: inline-block;
-        display: none;
-        height: 50px;
-        width: 50px;
-        object-fit: contain;
-    } */
-
 
     h2 {
         font-size: min(12.5vw, 25vh);

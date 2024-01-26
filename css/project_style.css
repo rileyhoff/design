@@ -15,7 +15,6 @@ main {
 #about_btn {
     width: calc(50% - 80px);
     font-size: var(--text-body);
-    /* background-color: var(--accent, #f00); */
     padding: 20px 40px;
     transition: .2s 0s ease-in-out;
     font-family: var(--accent-font);
