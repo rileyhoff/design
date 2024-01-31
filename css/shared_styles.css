@@ -11,8 +11,8 @@ shared styles
     --text-color: #222;
     --accent: #e4d9d9;
     --dark-accent: #e9e031;
-     --header-font: "felix", serif;
-     --header-font-small: "Cormorant Infant", serif;
+    --header-font: "felix", serif;
+    --header-font-small: "Cormorant Infant", serif;
     --accent-font: "Noto Sans Mono", monospace;
     --body-font: "Noto Sans Mono", monospace;
     --text-body: 14px;
@@ -51,6 +51,7 @@ a {
     cursor: pointer;
     color: inherit;
 }
+
 img {
     padding: 0;
     margin: 0;
@@ -86,8 +87,9 @@ footer {
     padding: 40px;
     display: flex;
 }
-footer p { 
-    margin: 0; 
+
+footer p {
+    margin: 0;
     font-size: var(--text-small);
     font-weight: 300;
 }
@@ -113,13 +115,16 @@ footer .content {
     margin-top: 10px;
     white-space: nowrap;
 }
-footer .content:hover::after, .text-link:hover::after {
+
+footer .content:hover::after,
+.text-link:hover::after {
     content: " \2197";
     display: inline;
     line-height: 1;
 }
 
-footer .sqkz_flower, #splash .sqkz_flower {
+footer .sqkz_flower,
+#splash .sqkz_flower {
     width: 20px;
     height: fit-content;
     object-fit: contain;
@@ -138,7 +143,7 @@ footer .sqkz_flower, #splash .sqkz_flower {
     z-index: 1000;
     background-color: var(--main-bg);
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     transform-origin: bottom;
     color: var(--text-color);
@@ -147,7 +152,8 @@ footer .sqkz_flower, #splash .sqkz_flower {
     line-height: 1;
     overflow: hidden;
 }
-#splash >  .sqkz_flower {
+
+#splash>.sqkz_flower {
     width: 30px;
     height: 30px;
     left: calc(50vw - 15px);
@@ -158,19 +164,24 @@ footer .sqkz_flower, #splash .sqkz_flower {
     opacity: .5;
     z-index: -1;
 }
-#splash.loaded {
-    animation: splash 1s 0s forwards 1  ease-in-out;
-}   
-@media only screen and (max-width: 767px){
-    footer{ margin-bottom: 40px; }
 
-    footer .content::after, .text-link::after {
+@media only screen and (max-width: 767px) {
+    footer {
+        margin-bottom: 40px;
+    }
+
+    footer .content::after,
+    .text-link::after {
         content: " \2197";
         display: inline;
         line-height: 1;
     }
-    footer>div>div { margin-left: 15vw; }
+
+    footer>div>div {
+        margin-left: 15vw;
+    }
 }
+
 @keyframes fade-in {
     from {
         opacity: 0;
