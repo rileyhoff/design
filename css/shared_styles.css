@@ -65,11 +65,8 @@ header {
     background-color: #f6f6f6af;
     display: flex;
     text-align: right;
-    /* color: var(--main-bg, #fff); */
     z-index: 1;
     font-family: var(--header-font);
-    /* background: rgb(255, 255, 255); */
-    /* background: linear-gradient(180deg, var(--main-bg, #fff) 0%, rgba(0, 0, 0, 0) 100%); */
 }
 
 header h1 {
@@ -82,7 +79,6 @@ header h1 {
 
 footer {
     width: calc(100% - 80px);
-    /* background-color: var(--dark-bg, #777); */
     background-color: #f6f6f688;
     padding: 40px;
     display: flex;
@@ -163,6 +159,10 @@ footer .sqkz_flower,
     position: absolute;
     opacity: .5;
     z-index: -1;
+}
+
+#splash.loaded {
+    animation: splash 1s 0s forwards 1 ease-in-out;
 }
 
 @media only screen and (max-width: 767px) {

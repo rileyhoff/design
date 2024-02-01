@@ -7,7 +7,12 @@ body {
     height: 100vh;
     overflow-y: auto;
 }
-header h1 { text-align: center; line-height: 1.8;}
+
+header h1 {
+    text-align: center;
+    line-height: 1.8;
+}
+
 main {
     padding: 0 5vw;
 }
@@ -112,16 +117,15 @@ main ol li {
 }
 
 iframe {
-    height: 90vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     position: relative;
-    left: -5vw;
-    margin: 1vh 0;
+    left: 0;
+    margin: 0;
     border: none;
-    background-color: black;
-    border-top: rgb(228, 217, 217) solid 2px;
-    border-bottom: rgb(228, 217, 217) solid 2px;
-    z-index: 100;
+    background-color: #fff;
+    /* border: rgb(228, 217, 217) solid 2px; */
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
 }
 
 .btn {
@@ -129,7 +133,6 @@ iframe {
     width: 90vw;
     font-size: var(--text-body);
     padding: .25em;
-    margin: .25em 0;
     background-color: transparent;
     /* border: 1px solid rgb(228, 217, 217); */
     border: none;
@@ -138,10 +141,6 @@ iframe {
 
 #mbl_view {
     display: none;
-}
-
-#git {
-    margin-bottom: 5vh;
 }
 
 /* Sample Works */
@@ -255,16 +254,77 @@ iframe {
     width: 5vw;
     height: fit-content;
 }
-@media only screen and ( max-width: 786px) {
-    .works_list h3 { width: 60%;}
-    .works_list span { white-space: nowrap;
-    width: fit-content  ;}
-    .works_list .number { width: fit-content;}
-    #works_nav a span { display: none; }
-    .btn { border: solid var(--accent) 1px;}
-    a .btn { padding: .5em; margin: .5em 0;}
-    #project_desc { line-height: 2; }
+
+.frame_wrap {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    padding-top: 54vh;
+    margin-top: 5vh;
 }
+
+.frame_wrap iframe {
+    position: absolute;
+    top: -23vh;
+    height: 95vh;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 100;
+    margin: 2.5vh 0;
+    transform: scale(.5);
+    transition: ease-in-out .3s;
+}
+
+.frame_wrap.expanded {
+    padding-top: 0;
+}
+
+.frame_wrap.expanded iframe {
+    position: relative;
+    width: 100vw;
+    top: 0;
+    left: -5vw;
+    transform: scale(1);
+    margin-bottom: 5vh;
+}
+
+.frame_wrap .menu {
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 786px) {
+    .works_list h3 {
+        width: 60%;
+    }
+
+    .works_list span {
+        white-space: nowrap;
+        width: fit-content;
+    }
+
+    .works_list .number {
+        width: fit-content;
+    }
+
+    #works_nav a span {
+        display: none;
+    }
+
+    .btn {
+        border: solid var(--accent) .5px;
+        padding: .5em;
+    }
+
+    .frame_wrap .menu {
+        gap: 2.5vh;
+    }
+
+    #project_desc {
+        line-height: 2;
+    }
+}
+
 @media only screen and (min-width: 787px) {
     /* DESKTOP */
 
@@ -296,18 +356,86 @@ iframe {
         left: 1.25em;
     }
 
-    iframe {
-        left: 0;
-        width: calc(90vw - 4px);
-        border: rgb(228, 217, 217) 2px solid;
-        transition: all .5s;
+    .frame_wrap.expanded iframe {
+        width: 95vw;
+        left: -2.5vw;
+        margin-bottom: 0;
     }
 
-    iframe.mbl {
-        width: 414px;
-        margin: 0 calc(50% - 207px);
-        max-height: 896px;
-        min-height: 750px;
+    .frame_wrap .menu {
+        position: absolute;
+        right: 0;
+        width: 20vw;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        top: 3vh;
+        gap: 1vh;
+        text-align: left;
+        opacity: .25;
+        transition: all ease-in-out .3s;
+    }
+
+    .frame_wrap .menu:hover {
+        opacity: 1;
+    }
+
+    .frame_wrap .menu .btn,
+    .frame-wrap .menu a {
+        text-align: left;
+        margin: 0 !important;
+        position: relative;
+        left: 0;
+        white-space: nowrap;
+    }
+
+    .frame_wrap.expanded:not(.mbl) .menu {
+        position: relative;
+        left: -2.5vw;
+        width: 95vw;
+        height: auto;
+        flex-direction: row;
+        top: 0;
+        gap: 1vh;
+        margin-top: 2.5vh;
+        text-align: center;
+    }
+
+    .frame_wrap.expanded:not(.mbl) .menu .btn,
+    .frame-wrap.expanded:not(.mbl) .menu a {
+        text-align: center;
+    }
+
+    .frame_wrap.mbl {
+        padding-top: calc(466px + 5vh);
+    }
+
+    .frame_wrap.mbl iframe {
+        width: 430px;
+        height: 932px;
+        left: calc(45vw - 215px);
+        top: -233px;
+        margin: 2.5vh 0;
+    }
+
+    .frame_wrap.mbl.expanded {
+        padding-top: 0;
+    }
+
+    .frame_wrap.mbl.expanded iframe {
+        position: relative;
+        width: 430px;
+        max-height: 95vh;
+        top: 0;
+        left: 0;
+    }
+
+    .frame_wrap.mbl .menu {
+        top: 13vh;
+    }
+
+    .frame_wrap.expanded.mbl .menu {
+        top: 13vh;
     }
 
     .btn {
@@ -316,6 +444,7 @@ iframe {
         margin-bottom: 2.5vh;
         font-family: var(--accent-font, monospace)
     }
+
     #works_nav .btn::after {
         visibility: hidden;
         content: "(" attr(data-work) ")";
@@ -329,6 +458,7 @@ iframe {
         transition: all .2s ease-in-out;
         z-index: -1;
     }
+
     .btn::before {
         visibility: hidden;
         content: "";
@@ -349,11 +479,6 @@ iframe {
 
     #mbl_view {
         display: inline-block;
-    }
-
-    #git {
-        position: absolute;
-        right: 5vw;
     }
 
     /* sample works */

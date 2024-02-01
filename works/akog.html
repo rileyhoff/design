@@ -9,7 +9,7 @@
     <meta name="description" content="A sample of design works created by SQKZ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/shared_styles.css" rel="stylesheet" type="text/css" media="screen" />
-    <link href="../css/project_style.css" rel="stylesheet" type="text/css" media="screen" /> 
+    <link href="../css/project_style.css" rel="stylesheet" type="text/css" media="screen" />
     <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../img/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../img/icons/favicon-16x16.png">
@@ -21,34 +21,48 @@
     <meta name="theme-color" content="#fefefe">
     <script src="../script.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+Mono:wght@100..900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+Mono:wght@100..900&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/sin/trunk/html5.js"></script>
     <![endif]-->
 </head>
+
 <body>
     <header>
         <h1 id="title"><a href="../">sqkz design</a></h1>
         <div id="works_nav">
-            <a class="btn prev" href="frekka" data-work="frekka">&#x2196; Prev<span>ious Project</span></a><a class="btn next" href="artportfolio" data-work="art portfolio">Next<span> Project</span> &#x2197;</a>
+            <a class="btn prev" href="frekka" data-work="frekka">&#x2196; Prev<span>ious Project</span></a><a
+                class="btn next" href="artportfolio" data-work="art portfolio">Next<span> Project</span> &#x2197;</a>
         </div>
     </header>
     <main>
-            <h2 >A Kind of Guise</h2>
-    <iframe id="projectFrame" class="desktop" src="https://sqkz.art/akog/"></iframe>
-    <a href="https://sqkz.art/akog/" target="_BLANK" ><button id="new_tab" class="btn" href="" target="_blank">View in New Tab &#x2197;</button></a>
-    <button id="mbl_view" class="btn" onclick="mblView(this)">Mobile Site &#x2197;</button>
-    <a href="https://github.com/rileyhoff/akindofguise" target="_BLANK" ><button id="git" class="btn" href="" target="_blank">Github. &#x2197;</button></a>
-    <ol class="col_2">
-        <li>Full stack build using React.js</li>
-        <li>Custom Assets and CSS Animations</li>
-        <li>E-commerce design</li>
-    </ol>
-    <p id="project_desc" class="col_3">
-        A case study design for the brand 'A Kind of Guise'. The goal was to create an engaging and interactive hero card that reacts to the position of mouse on desktop, using a custom 3d render and hidden title card images.
-        The single page design features horizonal scrollable cards, that reveal more info about each item on click. I aimed to reduce excess clutter on the page to create a smooth e-comcerce concept. 
-    </p>
+        <h2>A Kind of Guise</h2>
+        <div id="frame_wrap" class="frame_wrap">
+            <iframe id="projectFrame" class="desktop" src="https://sqkz.art/akog/"></iframe>
+            <div class="menu">
+                <button id="fulls" class="btn" onclick="expandFrame(this)">Fullscreen &#x2197;</button>
+                <a href="https://sqkz.art/akog/" target="_BLANK"><button id="new_tab" class="btn" href=""
+                        target="_blank">View
+                        in New Tab &#x2197;</button></a>
+                <button id="mbl_view" class="btn" onclick="mblView(this)">Mobile Site &#x2197;</button>
+                <a href="https://github.com/rileyhoff/akindofguise" target="_BLANK"><button id="git" class="btn" href=""
+                        target="_blank">Github. &#x2197;</button></a>
+            </div>
+        </div>
+        <ol class="col_2">
+            <li>Full stack build using React.js</li>
+            <li>Custom Assets and CSS Animations</li>
+            <li>E-commerce design</li>
+        </ol>
+        <p id="project_desc" class="col_3">
+            A case study design for the brand 'A Kind of Guise'. The goal was to create an engaging and interactive hero
+            card that reacts to the position of mouse on desktop, using a custom 3d render and hidden title card images.
+            The single page design features horizonal scrollable cards, that reveal more info about each item on click.
+            I aimed to reduce excess clutter on the page to create a smooth e-comcerce concept.
+        </p>
     </main>
     <div class="works">
         <p class="works_label">works</p>
@@ -83,7 +97,7 @@
             <li>
                 <a href="frekka" class="info">
                     <h3>
-                       Frekka
+                        Frekka
                     </h3>
                     <span>view project &#x2197;</span>
                     <div class="number">04</div>
@@ -118,4 +132,5 @@
         </div>
     </footer>
 </body>
+
 </html>
