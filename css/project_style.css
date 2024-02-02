@@ -10,7 +10,7 @@ body {
 
 header h1 {
     text-align: center;
-    line-height: 1.8;
+    line-height: 2;
 }
 
 main {
@@ -41,6 +41,7 @@ main {
     margin: 0;
     width: 50%;
     transition: all .2s ease-in-out;
+    padding: 5px;
 }
 
 #works_nav .btn.prev::after,
@@ -323,6 +324,7 @@ iframe {
     #project_desc {
         line-height: 2;
     }
+
     .frame_wrap:not(.expanded) iframe {
         border-radius: 20px;
     }

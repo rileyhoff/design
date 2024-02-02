@@ -25,15 +25,11 @@ p {
 
 #about_btn {
     width: calc(50% - 80px);
-    font-size: 1em;
-    /* background-color: var(--accent, #f00); */
     padding: 20px 40px;
     transition: .2s 0s ease-in-out;
     font-family: var(--accent-font);
     font-size: var(--text-body);
 }
-
-/* #about_btn:hover { background-color: var(--dark-accent, #f00); } */
 
 .works {
     display: flex;
@@ -74,7 +70,8 @@ p {
     display: flex;
     gap: 10%;
 }
-.works_list li a{
+
+.works_list li a {
     display: none;
     padding-top: 20%;
     transition: all .4s ease-in-out;
@@ -82,7 +79,8 @@ p {
 
 .works li.active a {
     display: block;
-} 
+}
+
 .works_list li a::before {
     content: " ";
     position: absolute;
@@ -93,9 +91,11 @@ p {
     z-index: 100;
     display: none;
 }
+
 .works_list li.active a::before {
     display: block;
 }
+
 .works_list h3 {
     font-family: var(--header-font);
     margin: 0;
@@ -137,7 +137,8 @@ p {
     transition: all .4s ease-in-out;
 }
 
-.works_right figure, .works_right .right_overlay {
+.works_right figure,
+.works_right .right_overlay {
     position: sticky;
     top: 0;
     display: flex;
@@ -150,22 +151,30 @@ p {
     z-index: 1;
     transition: all .4s ease-in-out;
 }
+
 .works_right figure img {
     transition: all .4s ease-in-out;
 }
+
 .works_right figure:hover img {
     opacity: .5;
 }
+
 .works_right .right_overlay {
     position: absolute;
     height: 100%;
     opacity: 0;
 }
+
 .works_right .right_overlay:hover {
     opacity: 1;
     cursor: pointer;
 }
-.hide .right_overlay { display: none;}
+
+.hide .right_overlay {
+    display: none;
+}
+
 .works_right img {
     max-width: 33.334vw;
     max-height: 50vh;
@@ -180,10 +189,15 @@ p {
     width: 100%;
     height: 100%;
     overflow: scroll;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
-.works_right  .meta_wrap::-webkit-scrollbar { display: none;}
+
+.works_right .meta_wrap::-webkit-scrollbar {
+    display: none;
+}
 
 .works_right .meta {
     position: sticky;
@@ -232,8 +246,8 @@ p {
 /* .works_right:hover .scroll-inner>div {
     animation-play-state: paused;
 } */
-.scroll-inner h4 { 
-    margin: 0; 
+.scroll-inner h4 {
+    margin: 0;
     padding: 0;
     font-weight: 400;
 }
@@ -272,6 +286,7 @@ p {
     padding-top: 20px;
     position: sticky;
     top: 0;
+    font-size: var(--text-body);
     z-index: 200;
 }
 
@@ -354,54 +369,84 @@ h2 {
         transform: translateX(-50%);
     }
 }
+
 @media only screen and (max-width: 1020px) {
-    .works_list li.active h3 { font-size: 48px; }
+    .works_list li.active h3 {
+        font-size: 48px;
+    }
 }
+
 @media only screen and (max-width: 786px) {
-    .works { min-height: 100vh;}
-    .works_right { display: none;}
-    .works_left { width: 100%; padding-right: 0;}
-    .works_list li.active h3 { font-size: 38px;}
+    #about_btn {
+        width: calc(50% - 40px);
+        padding: 20px;
+    }
+    .works {
+        min-height: 100vh;
+    }
 
-.works_list li {
-    display: flex;
-    gap: 20px;
-    width: calc(100vw - 40px);
-    transition: all .4s ease-in-out;
-    left: 0;
-  }
-  .works_list li.active {
-    width: calc(100vw - 20px);
-    padding: 0 0 0 20px;
-    margin-left: -70px;
-  }
-  .works_list li:not(.active) {background-color:  transparent !important;  
-}
-  .works_list li .number {
-    position: absolute;
-    right: 60px;
-    z-index: 2;
-  }
-  .works_list li.active .number {
-  color: var(--accent);
-  right: 20px;
-  }
-  
-.works_list li .wrap {padding: 10px 0; width: 100%; }
-.works_list li.active .wrap { 
-    padding: 20px 0; 
-}
+    .works_right {
+        display: none;
+    }
 
-    .works_list li .mbl img { 
+    .works_left {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .works_list li.active h3 {
+        font-size: 38px;
+    }
+
+    .works_list li {
+        display: flex;
+        gap: 20px;
+        width: calc(100vw - 40px);
+        transition: all .4s ease-in-out;
+        left: 0;
+    }
+
+    .works_list li.active {
+        width: calc(100vw - 20px);
+        padding: 0 0 0 20px;
+        margin-left: -70px;
+    }
+
+    .works_list li:not(.active) {
+        background-color: transparent !important;
+    }
+
+    .works_list li .number {
+        position: absolute;
+        right: 50px;
+        z-index: 2;
+    }
+
+    .works_list li.active .number {
+        color: var(--main-bg);
+        right: 20px;
+    }
+
+    .works_list li .wrap {
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    .works_list li.active .wrap {
+        padding: 20px 0;
+    }
+
+    .works_list li .mbl img {
         width: auto;
         max-width: 50vw;
         object-fit: cover;
         height: 100%;
         max-height: 25vh;
     }
-    .works_list li .mbl { 
-        width: auto; 
-        transform: translateX(100%); 
+
+    .works_list li .mbl {
+        width: auto;
+        transform: translateX(100%);
         display: block;
         margin: 0 auto;
         height: 0;
@@ -411,21 +456,32 @@ h2 {
         z-index: 0;
         transition: transform .4s ease-in-out;
     }
-    .works_list li.active .mbl { 
-        transform: translateX(0); 
+
+    .works_list li.active .mbl {
+        transform: translateX(0);
         height: auto;
     }
+
     .works_list li.active a {
         display: flex;
         padding: 20px 0;
         gap: 20px;
     }
-    .works_label { 
-        font-size: 14px; margin-top: -60px; z-index: 1; width: 40px; }
+
+    .works_label {
+        font-size: 14px;
+        margin-top: -60px;
+        z-index: 1;
+        width: 40px;
+    }
 
 }
+
 @media only screen and (min-width: 787px) {
-    .mbl { display: none;}
+    .mbl {
+        display: none;
+    }
+
     /* column at 16.667%, 5% margins*/
     .col_1 {
         position: relative;
@@ -455,18 +511,22 @@ h2 {
         width: 40vw;
         line-height: 90%;
     }
+
     .works_list li.active {
         height: 40vh;
         min-height: fit-content;
         position: relative;
     }
+
     .works_list li.active:hover {
         width: 100%;
     }
+
     .works_list li a:hover {
         padding-left: 5%;
         width: 95%;
     }
+
     .works_list li:hover {
         width: 95%;
     }
