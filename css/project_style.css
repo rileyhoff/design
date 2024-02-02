@@ -416,6 +416,7 @@ iframe {
         left: calc(45vw - 215px);
         top: -233px;
         margin: 2.5vh 0;
+        border-radius: 20px;
     }
 
     .frame_wrap.mbl.expanded {
