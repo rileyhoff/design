@@ -323,6 +323,9 @@ iframe {
     #project_desc {
         line-height: 2;
     }
+    .frame_wrap:not(.expanded) iframe {
+        border-radius: 20px;
+    }
 }
 
 @media only screen and (min-width: 787px) {
