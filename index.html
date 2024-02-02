@@ -48,78 +48,88 @@
                 <ol class="works_list">
                     <li onclick="setActiveWork(this)" data-work="artportfolio" data-img="img/art-folio-gif-grain-sm.webp"
                         data-color="#e5e5e5" data-meta=" - Fullstack Development - Website Design - Studio Artwork ">
-                        <span>
-                            <h3>
-                                Art Portfolio
-                            </h3>
-                            <div class="number">01</div>
+                        <span class="wrap">
+                            <span class="title">
+                                <h3>
+                                    Art Portfolio
+                                </h3>
+                                <div class="number">01</div>
+                            </span>
+                            <a href="./works/artportfolio" class="info">
+                                view project &#x2197;
+                            </a>
                         </span>
-                        <a href="./works/artportfolio" class="info">
-                            <div class="mbl">
-                                <img class="work_img-mbl" src="">
-                            </div>
-                            view project &#x2197;
-                        </a>
+                        <div class="mbl">
+                            <img class="work_img-mbl" src="./img/art-folio-gif-grain-sm.webp">
+                        </div>
                     </li>
                     <li onclick="setActiveWork(this)" data-work="nts" data-img="img/nts.png" data-color="#f3be93"
                         data-meta="- Mobile Redesign - Case Study ">
-                        <span>
-                            <h3>
-                                NTS Radio
-                            </h3>
-                            <div class="number">02</div>
+                        <span class="wrap">
+                            <span class="title">
+                                <h3>
+                                    NTS Radio
+                                </h3>
+                                <div class="number">02</div>
+                            </span>
+                            <a href="./works/nts" class="info">
+                                view project &#x2197;
+                            </a>
                         </span>
-                        <a href="./works/nts" class="info">
-                            <div class="mbl">
-                                <img class="work_img-mbl" src="">
-                            </div>
-                            view project &#x2197;
-                        </a>
+                        <div class="mbl">
+                            <img class="work_img-mbl" src="./img/nts.png">
+                        </div>
                     </li>
-                    <li onclick="setActiveWork(this)" data-work="scope" data-img="img\scope\NY_SCOPE_Showguide.jpg"
-                        data-color="#a7a86a" data-meta="- Design Associate - Graphic Design - Print - Digital ">
-                        <span>
-                            <h3>
-                                SCOPE
-                            </h3>
-                            <div class="number">03</div>
+                    <li onclick="setActiveWork(this)" data-work="scope" data-img="img\scope\NY_SCOPE_Showguide.webp" data-color="#a7a86a"
+                        data-meta="- Design Associate - Graphic Design - Print - Digital ">
+                        <span class="wrap">
+                            <span class="title">
+                                <h3>
+                                    SCOPE
+                                </h3>
+                                <div class="number">03</div>
+                            </span>
+                            <a href="./works/scope.html" class="info">
+                                view project &#x2197;
+                            </a>
                         </span>
-                        <a href="./works/scope.html" class="info">
-                            <div class="mbl">
-                                <img class="work_img-mbl" src="">
-                            </div>
-                            view project &#x2197;
-                        </a>
+                        <div class="mbl">
+                            <img class="work_img-mbl" src="./img/scope/NY_SCOPE_Showguide.webp">
+                        </div>
                     </li>
-                    <li onclick="setActiveWork(this)" data-work="frekka.html" data-img="img/frekka-1.png"
-                        data-color="#d2b4b4" data-meta="- Cargo - Website Design ">
-                        <span>
-                            <h3>
-                                Frekka
-                            </h3>
-                            <div class="number">04</div>
+                    <li onclick="setActiveWork(this)" data-work="frekka.html" data-img="img/frekka-1.png" data-color="#d2b4b4"
+                        data-meta="- Cargo - Website Design ">
+                        <span class="wrap">
+                            <span class="title">
+                                <h3>
+                                    Frekka
+                                </h3>
+                                <div class="number">04</div>
+                            </span>
+                            <a href="./works/frekka" class="info">
+                                view project &#x2197;
+                            </a>
                         </span>
-                        <a href="./works/frekka" class="info">
-                            <div class="mbl">
-                                <img class="work_img-mbl" src="">
-                            </div>
-                            view project &#x2197;
-                        </a>
+                        <div class="mbl">
+                            <img class="work_img-mbl" src="./img/frekka-1.png">
+                        </div>
                     </li>
-                    <li onclick="setActiveWork(this)" data-work="akog" data-img="img/akog-logo-static.png"
-                        data-color="#cfdeff" data-meta="- React.js - FullStack Development - Design ">
-                        <span>
-                            <h3>
-                                A Kind of Guise
-                            </h3>
-
-                            <div class="number">05</div>
+                    <li onclick="setActiveWork(this)" data-work="akog" data-img="img/akog.jpg" data-color="#cfdeff"
+                        data-meta="- React.js - FullStack Development - Design ">
+                        <span class="wrap">
+                            <span class="title">
+                                <h3>
+                                    A Kind of Guise
+                                </h3>
+                    
+                                <div class="number">05</div>
+                            </span>
+                            <a href="./works/akog" class="info">view project &#x2197;
+                            </a>
                         </span>
-                        <a href="./works/akog" class="info">
-                            <div class="mbl">
-                                <img class="work_img-mbl" src="">
-                            </div>view project &#x2197;
-                        </a>
+                        <div class="mbl">
+                            <img class="work_img-mbl" src="./img/akog.jpg">
+                        </div>
                     </li>
                 </ol>
             </div>
@@ -142,14 +152,6 @@
                 </div>
                 <figure>
                     <img id="work_img" src="" re="preload" as="image" alt="">
-                    <img class="preload" style="visibility: hidden; height: 0; width: 0;" class="art" src="img/art-folio-gif-grain-sm.webp">
-                    <img class="preload" style="visibility: hidden; height: 0; width: 0;" class="scope"
-                        src="img\scope\NY_SCOPE_Showguide.jpg">
-                    <img class="preload" style="visibility: hidden; height: 0; width: 0;" class="nts" src="img/nts.png">
-                    <img class="preload" style="visibility: hidden; height: 0; width: 0;" class="frekka"
-                        src="img/frekka-1.png">
-                    <img class="preload" style="visibility: hidden; height: 0; width: 0;" class="akog"
-                        src="img/akog-logo-static.png">
                     <a id="works_link" class="right_overlay"><span>View Project &#x2197;</span></a>
                 </figure>
             </div>

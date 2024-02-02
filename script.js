@@ -8,7 +8,6 @@ function setActiveWork(el) {
     el.classList.add('active');
     document.getElementById("works").classList.remove("hide");
     document.getElementById("work_img").src = el.dataset.img;
-    el.getElementsByClassName("work_img-mbl")[0].src = el.dataset.img;
     document.getElementById("works_right").style.backgroundColor = el.dataset.color;
     meta = el.dataset.meta.repeat(7);
     document.getElementById("meta-1").innerHTML = meta;
