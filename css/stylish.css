@@ -74,18 +74,12 @@ p {
     display: flex;
     gap: 10%;
 }
-.works_list li.active:hover {
-    width: 100%;
-}
 .works_list li a{
     display: none;
     padding-top: 20%;
     transition: all .4s ease-in-out;
 }
-.works_list li a:hover {
-    padding-left: 5%;
-    width: 95%;
-}
+
 .works li.active a {
     display: block;
 } 
@@ -465,6 +459,13 @@ h2 {
         height: 40vh;
         min-height: fit-content;
         position: relative;
+    }
+    .works_list li.active:hover {
+        width: 100%;
+    }
+    .works_list li a:hover {
+        padding-left: 5%;
+        width: 95%;
     }
     .works_list li:hover {
         width: 95%;
