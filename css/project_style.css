@@ -100,7 +100,7 @@ main ol li {
     font-family: var(--accent-font, monospace);
     font-style: normal !important;
     content: "\2193";
-    font-size: 150%;
+    font-size: 100%;
     position: absolute;
     right: 100%;
     top: 90%;
@@ -152,18 +152,34 @@ iframe {
     row-gap: 5vh;
     width: 90vw;
     padding: 5vh 0;
+    text-align: center;
+    transition: all .4s ease-in-out;
 }
-
+#sample_works.small {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    column-gap: 20px;
+    row-gap: 40px;
+}
+#sample_works.small img {
+    height: auto;
+    max-height: 150px;
+    margin-bottom: 0;
+    transition: all .4s ease-in-out;
+}
+#sample_works.small span {
+    display: none;
+}
 #sample_works img {
     width: 100%;
     height: 33.33vh;
     object-fit: contain;
-    object-position: 0;
+    object-position: center;
     border: none;
+    margin-bottom: 10px;
 }
 
-#sample_works div {
-    line-height: 115%;
+#sample_works.small div {
+    display: flex;
 }
 
 #full_view {

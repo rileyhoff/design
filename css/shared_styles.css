@@ -164,6 +164,12 @@ footer .sqkz_flower,
 #splash.loaded {
     animation: splash 1s 0s forwards 1 ease-in-out;
 }
+@media only screen and (min-width: 768px) {
+    header {
+        -webkit-backdrop-filter: blur(2px);
+        backdrop-filter: blur(2px);
+    }
+}
 
 @media only screen and (max-width: 767px) {
     footer {
