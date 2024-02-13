@@ -125,7 +125,6 @@ iframe {
     margin: 0;
     border: none;
     background-color: #fff;
-    /* border: rgb(228, 217, 217) solid 2px; */
     box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
 }
 
@@ -135,7 +134,6 @@ iframe {
     font-size: var(--text-body);
     padding: .25em;
     background-color: transparent;
-    /* border: 1px solid rgb(228, 217, 217); */
     border: none;
     font-family: var(--accent-font);
 }
@@ -335,7 +333,7 @@ margin: 0 auto;
 object-fit: contain;
 cursor: pointer;
 }
-.thumb_btn {
+.thumb_btn.btn {
     cursor: pointer;
     width: fit-content;
     margin: 2.5vh 0 -2.5vh;
