@@ -50,23 +50,36 @@
             installation of onsite signage.
         </p>
         <div id="scroll_to_view" class="col_1">Sample Works</div>
-        <div id="full_view" class="">
-            <button class="closeBtn" onclick="imgViewClose()">&#10005</button>
-            <img id="full_img" class="" src=""><p id="full_title"></p>
+        <div class="slider_wrap">
+        <div id="slider" class="slider">
+            <div data-num="0"  onclick="skipToSlide(slider, 0)" ><img class="" src="../img/scope/MB_SCOPE_Showguide-1.webp"><span>Showguide - Miami 2019</span></div>
+            <div data-num="1"  onclick="skipToSlide(slider, 1)" ><img class="" src="../img/scope/MB_SCOPE_Showguide-2.webp"><span>Showguide (View 2) - Miami 2019</span></div>
+            <div data-num="2"  onclick="skipToSlide(slider, 2)" ><img class="" src="../img/scope/MB_SCOPE_Showguide-3.webp"><span>Showguide (View 3, Poster) - Miami 2019</span></div>
+            <div data-num="3"  onclick="skipToSlide(slider, 3)" ><img class="" src="../img/scope/NY_SCOPE_Showguide.webp"><span>Showguide - New York 2020</span></div>
+            <div data-num="4"  onclick="skipToSlide(slider, 4)" ><img class="" src="../img/scope/SCOPE_NY20_Rejected Ad.webp"><span>2020 Digital Ad (Sample)- New York 2020</span></div>
+            <div data-num="5"  onclick="skipToSlide(slider, 5)" ><img class="" src="../img/scope/SNY20_ad_animation_flicker_sm.gif"><span>Animated Digtial Ad - New York 2020</span></div>         
+            <div data-num="6"  onclick="skipToSlide(slider, 6)" ><img class="" src="../img/scope/SNY20_showguide_mockup_Lighting.webp"><span>Showguide Digital Mockup - New York 2020</span></div>
+            <div data-num="7"  onclick="skipToSlide(slider, 7)" ><img class="" src="../img/scope/IMG_20191220_090826.webp"><span>Full Page Print Ad - Miami 2019</span></div>
+            <div data-num="8"  onclick="skipToSlide(slider, 8)" ><img class="" src="../img/scope/show_guide_render.webp"><span>Showguide Digital Mockup Template - Miami 2019</span></div>
+            <div data-num="9"  onclick="skipToSlide(slider, 9)" ><img class="" src="../img/scope/SCOPE_MB19_IG_story_crop.webp"><span>Instagram Story - Miami 2019</span></div>
+            <div data-num="10" onclick="skipToSlide(slider, 10)" ><img class="" src="../img/scope/SCOPE_MB19_Oasis_Poster.webp"><span>Offical Part Instagram Post - Miami 2019</span></div>
+            <div data-num="11" onclick="skipToSlide(slider, 11)" ><img class="" src="../img/scope/twoSpread_mag_render.webp"><span>Two-Page Spread - Custom Digital Mockup Template</span></div>
         </div>
+</div>
+<div onclick='changeGrid(this)' id="thumb_btn" class="thumb_btn btn">thumbnails</div>
         <div id="sample_works" class="full_view">
-            <div onclick="imgView(this)"><img class="" src="../img/scope/MB_SCOPE_Showguide-1.webp"><span>Showguide - Miami 2019</span></div>
-            <div onclick="imgView(this)"><img class="" src="../img/scope/MB_SCOPE_Showguide-2.webp"><span>Showguide (View 2) - Miami 2019</span></div>
-            <div onclick="imgView(this)"><img class="" src="../img/scope/MB_SCOPE_Showguide-3.webp"><span>Showguide (View 3, Poster) - Miami 2019</span></div>
-            <div onclick="imgView(this)"><img class="" src="../img/scope/NY_SCOPE_Showguide.webp"><span>Showguide - New York 2020</span></div>
-            <div onclick="imgView(this)"><img class="" src="../img/scope/SCOPE_NY20_Rejected Ad.webp"><span>2020 Digital Ad (Sample)- New York 2020</span></div>
-            <div onclick="imgView(this)"><img class="" src="../img/scope/SNY20_ad_animation_flicker_sm.gif"><span>Animated Digtial Ad - New York 2020</span></div>         
-            <div onclick="imgView(this)"><img class="" src="../img/scope/SNY20_showguide_mockup_Lighting.webp"><span>Showguide Digital Mockup - New York 2020</span></div>
-            <div onclick="imgView(this)"><img class="" src="../img/scope/IMG_20191220_090826.webp"><span>Full Page Print Ad - Miami 2019</span></div>
-            <div onclick="imgView(this)"><img class="" src="../img/scope/show_guide_render.webp"><span>Showguide Digital Mockup Template - Miami 2019</span></div>
-            <div onclick="imgView(this)"><img class="" src="../img/scope/SCOPE_MB19_IG_story_crop.webp"><span>Instagram Story - Miami 2019</span></div>
-            <div onclick="imgView(this)"><img class="" src="../img/scope/SCOPE_MB19_Oasis_Poster.webp"><span>Offical Part Instagram Post - Miami 2019</span></div>
-            <div onclick="imgView(this)"><img class="" src="../img/scope/twoSpread_mag_render.webp"><span>Two-Page Spread - Custom Digital Mockup Template</span></div>
+            <div onclick="skipToSlide(slider, 0)" ><img class="" src="../img/scope/MB_SCOPE_Showguide-1.webp"><span>Showguide - Miami 2019</span></div>
+            <div onclick="skipToSlide(slider, 1)" ><img class="" src="../img/scope/MB_SCOPE_Showguide-2.webp"><span>Showguide (View 2) - Miami 2019</span></div>
+            <div onclick="skipToSlide(slider, 2)" ><img class="" src="../img/scope/MB_SCOPE_Showguide-3.webp"><span>Showguide (View 3, Poster) - Miami 2019</span></div>
+            <div onclick="skipToSlide(slider, 3)" ><img class="" src="../img/scope/NY_SCOPE_Showguide.webp"><span>Showguide - New York 2020</span></div>
+            <div onclick="skipToSlide(slider, 4)" ><img class="" src="../img/scope/SCOPE_NY20_Rejected Ad.webp"><span>2020 Digital Ad (Sample)- New York 2020</span></div>
+            <div onclick="skipToSlide(slider, 5)" ><img class="" src="../img/scope/SNY20_ad_animation_flicker_sm.gif"><span>Animated Digtial Ad - New York 2020</span></div>         
+            <div onclick="skipToSlide(slider, 6)" ><img class="" src="../img/scope/SNY20_showguide_mockup_Lighting.webp"><span>Showguide Digital Mockup - New York 2020</span></div>
+            <div onclick="skipToSlide(slider, 7)" ><img class="" src="../img/scope/IMG_20191220_090826.webp"><span>Full Page Print Ad - Miami 2019</span></div>
+            <div onclick="skipToSlide(slider, 8)" ><img class="" src="../img/scope/show_guide_render.webp"><span>Showguide Digital Mockup Template - Miami 2019</span></div>
+            <div onclick="skipToSlide(slider, 9)"><img class="" src="../img/scope/SCOPE_MB19_IG_story_crop.webp"><span>Instagram Story - Miami 2019</span></div>
+            <div onclick="skipToSlide(slider, 10)"><img class="" src="../img/scope/SCOPE_MB19_Oasis_Poster.webp"><span>Offical Part Instagram Post - Miami 2019</span></div>
+            <div onclick="skipToSlide(slider, 11)"><img class="" src="../img/scope/twoSpread_mag_render.webp"><span>Two-Page Spread - Custom Digital Mockup Template</span></div>
         </div>
     </main>
     <div class="works">
@@ -137,4 +150,29 @@
         </div>
     </footer>
    </body>
+   <script>
+    var currentnum = 0;
+    const slider = document.getElementById("slider");
+    const total = slider.children.length;
+    
+    document.onkeydown = (e) => {
+        e = e || window.event;
+    
+        currentnum = getCurrentSlide(slider,total);
+        //scroll to next or previous slide using arrow keys
+        if (e.keyCode === 37) {
+            //left
+            if (currentnum > 0) {
+                var image = slider.children[currentnum-1];
+                image.scrollIntoView({ behavior: "smooth", block: "start", inline: "center" });
+            }
+        } else if (e.keyCode === 39) {
+            //right
+            if (currentnum < total - 1) {
+                var image = slider.children[currentnum + 1];
+                image.scrollIntoView({ behavior: "smooth", block: "start", inline: "center" });
+            }
+        }
+    };
+    </script>
 </html>
