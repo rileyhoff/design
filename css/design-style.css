@@ -675,10 +675,16 @@ button {
     margin: calc(50vh - 100%) 0 50vh;
 }
 
-#about .email {
+#about .email, #about .footer-link {
     grid-column: 4;
     grid-row: 3;
     margin-top: 100vh;
+}
+#about .linkedin {
+    grid-column: 6;
+}
+#about .github {
+    grid-column: 7;
 }
 
 footer {
@@ -842,11 +848,6 @@ footer svg {
         margin-bottom: 24px;
     }
 
-    #about .email {
-        grid-column: 1/-1;
-        text-align: center;
-    }
-
     .sticky-project-title.is-visible {
         display: block;
         position: fixed;
@@ -998,8 +999,19 @@ footer svg {
         line-height: 66px;
     }
 
-    #about .email {
+    #about .email, #about .linkedin, #about .github {
         margin-top: calc(100vh - 100px);
         margin-bottom: 100px;
+    }
+        #about .email {
+        grid-column: 1;
+    }
+
+    #about .linkedin {
+        grid-column: 3;
+    }
+
+    #about .github {
+        grid-column: 4;
     }
 }
