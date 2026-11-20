@@ -356,6 +356,9 @@ article h2 {
     width: 100%;
     font-weight: 600;
 }
+article h2:focus-visible {
+    outline: none !important;
+}
 
 .sticky-project-title {
     display: none;
@@ -828,6 +831,7 @@ footer svg {
 
     article p {
         margin: 24px 0 64px;
+        line-height: 22px;
     }
 
     #scope article p {
@@ -938,6 +942,7 @@ footer svg {
         padding: 0 12px;
         border: solid 1px var(--border-color);
         font-size: 10px;
+        font-weight: 600;
         flex-grow: 0;
         width: 25%;
         position: relative;
@@ -999,6 +1004,10 @@ footer svg {
         text-align: right;
         font-size: 92px;
         line-height: 66px;
+    }
+
+    #about p {
+        line-height: 22px;
     }
 
     #about .email, #about .linkedin, #about .github {
