@@ -136,12 +136,28 @@ html.intro-active {
     }
 }
 
+@keyframes horizontal-scroll-cue {
+    50% {
+        transform: translateX(4px);
+    }
+}
+
+.carousel-scroll-cue {
+    display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .intro-splash {
         transition-duration: 0.01ms;
     }
 
     .intro-splash-link span {
+        animation: none;
+    }
+
+    .carousel-scroll-cue,
+    .carousel-scroll-cue.is-visible {
+        transition: none;
         animation: none;
     }
 
@@ -627,6 +643,9 @@ body.image-expanded.image-closing::after {
     justify-content: space-between;
     gap: 12px;
 }
+.image-grid .side-by-side  img {
+    object-fit: contain;
+}
 
 button {
     font-size: 12px;
@@ -809,6 +828,10 @@ footer svg {
         transition: opacity 600ms ease, transform 600ms ease;
     }
 
+    .project {
+        position: relative;
+    }
+
     .project article {
         margin-bottom: 64px;
     }
@@ -835,7 +858,57 @@ footer svg {
     }
 
     .image-grid {
-        min-height: 50vh;
+        box-sizing: border-box;
+        min-height: 0;
+        padding: 0 7vw;
+        overflow-x: auto;
+        overflow-y: hidden;
+        overscroll-behavior-x: contain;
+        scroll-padding-inline: 7vw;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .image-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .project .image-grid {
+        display: flex;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .project .image-grid > figure {
+        flex: 0 0 78vw;
+        width: 78vw;
+        max-width: 78vw;
+        scroll-snap-align: start;
+    }
+
+    .project .image-grid > figure.grid {
+        display: grid;
+    }
+
+    .carousel-scroll-cue {
+        display: flex;
+        grid-column: 1 / -1;
+        justify-self: center;
+        color: var(--primary-color);
+        font-size: 20px;
+        line-height: 1;
+        position: absolute;
+        bottom: -24px;
+        right: 12px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 350ms ease;
+    }
+
+    .carousel-scroll-cue.is-visible {
+        opacity: 1;
+        animation: horizontal-scroll-cue 1.2s ease-in-out infinite;
     }
 
     figure figcaption {
@@ -848,6 +921,10 @@ footer svg {
 
     figure:has(figcaption) {
         margin-bottom: 24px;
+    }
+
+    .image-grid .mbl .video-player {
+        border-radius: 12px;
     }
 
     .sticky-project-title.is-visible {
@@ -972,11 +1049,21 @@ footer svg {
     }
 
     .project article,
-    .project .image-grid,
     #about section {
         grid-column: 1 / -1;
         position: static;
         overflow: hidden;
+    }
+
+    .project .image-grid {
+        grid-column: 1 / -1;
+        position: static;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-right: 12px;
+        padding-left: 12px;
+        margin-right: -12px;
+        margin-left: -12px;
     }
 
     #about section {

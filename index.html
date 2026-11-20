@@ -212,17 +212,15 @@
                 </p>
             </article>
             <section class="image-grid">
-                <figure class="w-full">
-                    <img src="./imgs/NY_SCOPE_Showguide.webp" alt="" loading="lazy" decoding="async">
-                    <figcaption style="color: var(--bg-color); opacity: .95;">Showguide - NYC 2020</figcaption>
-                </figure>
-                <figure class="w-full grid" style="grid-template-rows: 1fr 1fr 1fr;">
-                    <img style="grid-column: 2; grid-row: 1;" src="./imgs/MB_SCOPE_Showguide-2.webp" alt=""
+                <figure class="grid w-full" style="grid-auto-rows: 1fr;">
+                    <img style="grid-column: 1/-1; grid-row: 1;" src="./imgs/NY_SCOPE_Showguide.webp" alt="" loading="lazy" decoding="async">
+                    <img style="grid-column: 2; grid-row: 2;" src="./imgs/MB_SCOPE_Showguide-2.webp" alt=""
                         loading="lazy" decoding="async">
-                    <img style="grid-column: 3; grid-row: 1;" src="./imgs/MB_SCOPE_Showguide-3.webp" alt=""
+                    <img style="grid-column: 3; grid-row: 2;" src="./imgs/MB_SCOPE_Showguide-3.webp" alt=""
                         loading="lazy" decoding="async">
-                    <img style="grid-column: 4; grid-row: 1;" src="./imgs/MB_SCOPE_Showguide-3.webp" alt=""
+                    <img style="grid-column: 4; grid-row: 2;" src="./imgs/MB_SCOPE_Showguide-3.webp" alt=""
                         loading="lazy" decoding="async">
+                                            <figcaption style="color: var(--bg-color); opacity: .95;">Showguide - NYC 2020</figcaption>
                 </figure>
                 <figure class="w-full grid">
                     <img style="grid-column: 2 / 5; grid-row: 1;" src="./imgs/SNY20_showguide_mockup_Lighting.webp"
@@ -233,7 +231,7 @@
                         src="./imgs/scope-art-show-2023-1024x747.webp" alt="" loading="lazy" decoding="async">
                 </figure>
                 <figure class="w-full">
-                    <img src="./imgs/SNY20_ad_animation_flicker_sm.webp" alt="" loading="lazy" decoding="async">
+                    <img src="./imgs/SNY20_ad_animation_flicker_sm.webp" alt="" loading="lazy" decoding="async" style="height: 100%; object-fit: contain;">
                 </figure>
             </section>
         </div>
@@ -506,6 +504,68 @@
         mainGrid.inert = true;
         const mobileViewport = window.matchMedia('(max-width: 767px)');
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let hasScrolledCarousel = [...document.querySelectorAll('.project .image-grid')]
+            .some((grid) => grid.scrollLeft > 0);
+        const carouselScrollCues = [...document.querySelectorAll('.project .image-grid')].map((grid) => {
+            const cue = document.createElement('span');
+            cue.className = 'carousel-scroll-cue';
+            cue.setAttribute('aria-hidden', 'true');
+            cue.textContent = '\u2192';
+            grid.insertAdjacentElement('afterend', cue);
+
+            const state = { grid, cue, hasScrolled: grid.scrollLeft > 0, imagesLoaded: false };
+            grid.addEventListener('scroll', () => {
+                if (grid.scrollLeft > 0) {
+                    hasScrolledCarousel = true;
+                    state.hasScrolled = true;
+                    carouselScrollCues.forEach(({ cue: scrollCue }) => {
+                        scrollCue.classList.remove('is-visible');
+                    });
+                }
+            }, { passive: true });
+
+            return state;
+        });
+        let carouselCueDelayElapsed = false;
+        const updateCarouselScrollCues = () => {
+            if (!carouselCueDelayElapsed || !mobileViewport.matches || hasScrolledCarousel) return;
+
+            carouselScrollCues.forEach((state) => {
+                const { grid, cue } = state;
+                state.hasScrolled ||= grid.scrollLeft > 0;
+                if (state.hasScrolled) {
+                    cue.classList.remove('is-visible');
+                } else if (grid.scrollWidth > grid.clientWidth + 1) {
+                    cue.classList.add('is-visible');
+                }
+            });
+        };
+        setTimeout(() => {
+            carouselCueDelayElapsed = true;
+            updateCarouselScrollCues();
+        }, 4000);
+        const loadMobileCarouselImages = () => {
+            if (!mobileViewport.matches) return;
+
+            carouselScrollCues.forEach((state) => {
+                const { grid } = state;
+                const bounds = grid.getBoundingClientRect();
+                if (
+                    state.imagesLoaded
+                    || bounds.top > window.innerHeight + 200
+                    || bounds.bottom < -200
+                ) return;
+
+                const secondFigure = [...grid.children]
+                    .filter((figure) => getComputedStyle(figure).display !== 'none')[1];
+                secondFigure?.querySelectorAll('img[loading="lazy"]')
+                    .forEach((image) => {
+                        image.loading = 'eager';
+                    });
+                state.imagesLoaded = true;
+            });
+        };
+        loadMobileCarouselImages();
         let projectRevealObserver;
         const updateMobileProjectReveal = () => {
             projectRevealObserver?.disconnect();
@@ -584,7 +644,9 @@
         }
         mobileViewport.addEventListener('change', (event) => {
             if (!event.matches) finishIntro();
+            loadMobileCarouselImages();
             updateMobileProjectReveal();
+            updateCarouselScrollCues();
         });
         reducedMotion.addEventListener('change', updateMobileProjectReveal);
 
@@ -711,6 +773,7 @@
         let scrollUpdatePending = false;
         let isScrollingDown = false;
         window.addEventListener('scroll', () => {
+            loadMobileCarouselImages();
             const currentScrollY = window.scrollY;
             isScrollingDown = currentScrollY > previousScrollY;
             previousScrollY = currentScrollY;
@@ -728,6 +791,8 @@
         window.addEventListener('resize', () => {
             isScrollingDown = false;
             previousScrollY = window.scrollY;
+            loadMobileCarouselImages();
+            updateCarouselScrollCues();
             updateActiveProject();
             updateHeaderVisibility();
             updateStickyProjectTitle();
