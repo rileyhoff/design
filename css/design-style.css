@@ -98,6 +98,7 @@ html.intro-active {
     display: block;
     width: min(120px, 50vw);
     height: auto;
+    animation: intro-fade-in 700ms ease 150ms both;
 }
 
 .intro-splash-link {
@@ -110,10 +111,23 @@ html.intro-active {
     text-transform: uppercase;
     position: relative;
     top: 20vh;
+    animation: intro-fade-in 600ms ease 1s both;
 }
 
 .intro-splash-link span {
     animation: scroll-cue 1.2s ease-in-out infinite;
+}
+
+@keyframes intro-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes scroll-cue {
@@ -128,6 +142,11 @@ html.intro-active {
     }
 
     .intro-splash-link span {
+        animation: none;
+    }
+
+    .intro-splash-logo,
+    .intro-splash-link {
         animation: none;
     }
 }
@@ -681,6 +700,21 @@ footer svg {
 
     .intro-splash:not(.is-dismissed) {
         display: flex;
+    }
+
+    html.mobile-project-reveal .project article,
+    html.mobile-project-reveal .project .image-grid>figure {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    html.mobile-project-reveal .project article.is-revealed,
+    html.mobile-project-reveal .project article:focus-within,
+    html.mobile-project-reveal .project .image-grid>figure.is-revealed,
+    html.mobile-project-reveal .project .image-grid>figure:focus-within {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 600ms ease, transform 600ms ease;
     }
 
     .project article {
