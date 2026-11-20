@@ -8,7 +8,7 @@
     <meta name="description" content="Riley Hoff - Art, design, and development portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msapplication-TileColor" content="#000">
-    <meta name="msapplication-config" content="/icon/browserconfig.xml">
+    <meta name="msapplication-config" content="./icon/browserconfig.xml">
     <meta name="theme-color" content="#000">
     <link rel="apple-touch-icon" sizes="180x180" href="./icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./icon/favicon-32x32.png">
@@ -55,37 +55,53 @@
                 <h2>Art Portfolio</h2>
                 <div class="tags">
                     <div>Studio Art</div>
-                    <div>Fullstack design & development</div>
+                    <div>Fullstack Design & Development</div>
                 </div>
-                <p> A website built to showcase my paintings, drawings, and other art projects. Designed and coded
-                    independently.
-                    In addition to showcasing my artwork, the site
-                    serves as a means for contacting me and inquiring about specific pieces. These functionalities were
-                    intentionally kept secondary in the design, allowing the focus to remain on the artworks; differing
-                    from typical e-commerce design.</p>
+                <p> Independently designed and coded a personal portfolio website to showcase my paintings, drawings,
+                    and art projects. While the site supports direct inquiries about specific pieces, I intentionally
+                    kept contact and purchasing tools secondary in the layout—breaking away from typical e-commerce
+                    templates so the artwork remains the focal point.</p>
                 <button><a href="https://sqkz.art" target="_blank">Visit Site <span
                             class="external-link-arrow">&#8599;</span></a></button>
             </article>
             <section class="image-grid">
                 <figure class="w-full grid">
-                    <img style="grid-row: 3;" src="./imgs/santos_SQKZ_riley-hoff.jpg" alt="">
-                    <img style="grid-column: 3;" src="./imgs/coup_SQKZ_riley-hoff.webp" alt="">
-                    <img style="grid-column: 3;" src="./imgs/swan2_SQKZ_Riley-Hoff.jpg" alt="">
-                    <img style="grid-column: 4; grid-row: 1;" src="./imgs/Untitled flower 2_SQKZ_Riley-Hoff.jpg  "
-                        alt="">
-                    <img style="grid-column: 4;" src="./imgs/silver-1_SQKZ_riley-hoff.avif" alt="">
+                    <img class="art-grid-image art-grid-image--santos" src="./imgs/santos_SQKZ_riley-hoff.webp"
+                        alt="Santos - Riley Hoff">
+                    <img class="art-grid-image art-grid-image--coup" src="./imgs/coup_SQKZ_riley-hoff.webp"
+                        alt="Coup - Riley Hoff">
+                    <img class="art-grid-image art-grid-image--swan" src="./imgs/swan2_SQKZ_Riley-Hoff.webp"
+                        alt="Swan 2 - Riley Hoff">
+                    <img class="art-grid-image art-grid-image--flower"
+                        src="./imgs/Untitled flower 2_SQKZ_Riley-Hoff.webp" alt="Untitled Flower 2 - Riley Hoff">
+                    <img class="art-grid-image art-grid-image--silver" src="./imgs/silver-1_SQKZ_riley-hoff.avif"
+                        alt="Silver 1 - Riley Hoff">
                 </figure>
                 <figure class="w-full desktop">
-                    <img src="./imgs/portfolio_desktop.png" alt="">
+                    <div class="video-player">
+                        <video data-src="./imgs/art-portfolio-desk.mov" poster="./imgs/art-portfolio-desk-poster.webp"
+                            width="2796" height="1682" preload="none" muted loop playsinline>Your browser does not
+                            support the video tag.</video>
+                        <span class="video-pause-icon" aria-hidden="true"><span></span><span></span></span>
+                    </div>
                     <figcaption>Homepage - Desktop</figcaption>
                 </figure>
                 <figure class="w-full desktop">
-                    <img src="./imgs/portfolio-desktop-2.png" alt="">
+                    <div class="video-player">
+                        <video data-src="./imgs/painting-desk.mov" poster="./imgs/painting-desk-poster.webp"
+                            width="2796" height="1682" preload="none" muted loop playsinline>Your browser does not
+                            support the video tag.</video>
+                        <span class="video-pause-icon" aria-hidden="true"><span></span><span></span></span>
+                    </div>
                     <figcaption>Painting - Desktop</figcaption>
                 </figure>
                 <figure class="w-full mbl">
-                    <video src="./imgs/portfolio-mbl.webm" muted autoplay loop>Your browser does not support
-                        the video tag.</video>
+                    <div class="video-player">
+                        <video data-src="./imgs/portfolio-mbl-mobile.webm" poster="./imgs/portfolio-mbl-poster.webp"
+                            width="676" height="1200" preload="none" muted loop playsinline>Your browser does not
+                            support the video tag.</video>
+                        <span class="video-pause-icon" aria-hidden="true"><span></span><span></span></span>
+                    </div>
                     <figcaption>Painting - Mobile</figcaption>
                 </figure>
             </section>
@@ -94,13 +110,12 @@
             <article>
                 <h2>Apple TV</h2>
                 <div class="tags">
-                    <div>Dynamic digital Advertisment</div>
-                    <div>Frontend development</div>
+                    <div>Interactive Digital Advertisment</div>
+                    <div>Frontend Development</div>
                 </div>
-                <p> A bespoke interactive advertisement build to scale across full 35,000+ publisher sites. For Apple
-                    TV monarch campaign. Developed interactive ad that tracks scroll position served from within an
-                    iframe across various sites.
-                    Maintiains hight standards of load times while retaining funciontality similar to agency mocks. </p>
+                <p> A bespoke interactive ad unit for Apple TV’s Monarch campaign that scaled across 35,000+ publisher
+                    sites. Engineered to track scroll position from inside cross-domain iframes, the ad maintained fast
+                    load times while preserving the rich interactive functionality of the original agency mocks. </p>
                 <button><a
                         href="https://preview.nativo.com/fortune.com-v2/articlepage.html?ntv_cccta=VGcDAAAAAAAAAAAAAAAAWIEVA&prx_ro=s"
                         target="_blank">Visit Interactive Preview <span
@@ -108,30 +123,70 @@
             </article>
             <section class="image-grid">
                 <figure class="w-full mbl">
-                    <video src="./imgs/monarch.mov" muted autoplay loop>Your browser does not support the
-                        video tag.</video>
+                    <div class="video-player">
+                        <video data-src="./imgs/monarch-mobile.mp4" poster="./imgs/monarch-poster.webp" width="534"
+                            height="1158" preload="none" muted loop playsinline>Your browser does not support the video
+                            tag.</video>
+                        <span class="video-pause-icon" aria-hidden="true"><span></span><span></span></span>
+                    </div>
                     <figcaption></figcaption>
                 </figure>
             </section>
         </div>
         <div id="life360" class="project">
             <article>
-                <h2>Life360</h2>
+                <h2>Life360 Ads</h2>
                 <div class="tags">
-                    <div>Bespoke Interactive Advertisment</div>
-                    <div>Fullstack design & development</div>
+                    <div>Fullstack Web Demo Development</div>
+                    <div>Native Ad Development</div>
+                    <div>Off-App Advertising Integrations</div>
                 </div>
-                <p> A bespoke interactive advertisement build to spec for scale across full publisher sites. For apple
-                    tv monarch campaign. </p>
+                <p> Built interactive web demos from the ground up that closely mimic the Life360 app experience and
+                    serve live ad previews directly from Life360’s enterprise ad software. These demos lower the barrier
+                    to showcasing advertising capabilities to external clients, reduce friction for current partners
+                    reviewing and signing off on creative, and help internal teams quickly debug issues.
+                    <br>
+                    <br>
+                    At Life360, I also design and develop native ad templates served across high-traffic, premium
+                    publisher sites. Offering flexible integration options, these templates allow advertisers to run a
+                    broad scope of campaigns while maintaining the same high-quality look and feel as surrounding
+                    editorial content.
+
+                </p>
                 <button><a
-                        href=https://preview.nativo.com/life360/focus-mode.html?ntv_cccta=2qcDAAAAAAAAAAAAAAAAd_0hA&prx_ro=s&ntv_opt=100164"
+                        href="https://preview.nativo.com/life360/focus-mode.html?ntv_cccta=2qcDAAAAAAAAAAAAAAAAd_0hA&amp;prx_ro=s&amp;ntv_opt=100164"
                         target="_blank">View Demo <span class="external-link-arrow">&#8599;</span></a></button>
             </article>
             <section class="image-grid">
                 <figure class="w-full desktop">
-                    <video src="./imgs/focusmode-desk.mov" muted autoplay loop>Your browser does not support
-                        the video tag.</video>
-                    <figcaption>Focus Mode Demosite</figcaption>
+                    <div class="video-player">
+                        <video data-src="./imgs/life360-demo-desk.mov" poster="./imgs/life360-demo-desk-poster.webp"
+                            width="2994" height="1682" preload="none" muted loop playsinline>Your browser does not
+                            support the video tag.</video>
+                        <span class="video-pause-icon" aria-hidden="true"><span></span><span></span></span>
+                    </div>
+                    <figcaption>Focus Mode Demosite - Native Ad</figcaption>
+                </figure>
+                <figure class="w-full mbl">
+                    <div class="video-player">
+                        <video data-src="./imgs/map-demo-video-mbl-mobile.mp4"
+                            poster="./imgs/map-demo-video-mbl-poster.webp" width="682" height="1280" preload="none"
+                            muted loop playsinline>Your browser does not support the video tag.</video>
+                        <span class="video-pause-icon" aria-hidden="true"><span></span><span></span></span>
+                    </div>
+                    <figcaption>Map Banner Demosite - Video Ad</figcaption>
+                </figure>
+                <figure class="w-full grid" style="grid-template-rows: 1fr 1fr; grid-template-columns: 1fr 1fr;">
+                    <div class="side-by-side">
+                        <img src="./imgs/native-ad-bi.webp" alt="Native Ad - BI" loading="lazy" decoding="async" />
+                        <img src="./imgs/native-ad-golf.webp" alt="Native Ad - Golf" loading="lazy" decoding="async" />
+                    </div>
+                    <div class="side-by-side" style="grid-row: 2;">
+                        <img src="./imgs/native-ad-motortrend.webp" alt="Native Ad - Motortrend" loading="lazy"
+                            decoding="async" />
+                        <img src="./imgs/native-ad-TIME.webp" alt="Native Ad - TIME" loading="lazy" decoding="async" />
+                    </div>
+                    <figcaption>Native Ads</figcaption>
                 </figure>
             </section>
         </div>
@@ -145,60 +200,67 @@
                     <div>On Site Signage</div>
                 </div>
                 <p>
-
-                    INSCOPE (Formerly SCOPE) is an International Contemporary Art show, focusing on showcasing premier
-                    art galleries in the
-                    contemporary art space. INSCOPE has garnered extensive critical acclaim with attendance of 1.2
-                    million total visitors. I worked as a design associate, alongside the Head of design and Director of
-                    INSCOPE to create all print and digital design materials for the 2019 Miami Beach and 2020 New York
-                    shows. The work consisted of but was not limited to, ad campaigns, onsite print material design,
-                    signage throughout the show and web development. In weeks prior to the shows, I
-                    worked onsite with out of house crews and union members to oversee the quality and installation of
-                    onsite signage.
+                    INSCOPE (formerly SCOPE) is a critically acclaimed international contemporary art show showcasing
+                    premier galleries, drawing over 1.2 million visitors. As Design Associate, I partnered with the Head
+                    of Design and Show Director to produce all print and digital assets for the 2019 Miami Beach and
+                    2020 New York editions—spanning ad campaigns, onsite print materials, environmental signage, and web
+                    development. Ahead of each fair, I also worked onsite alongside external crews and union teams to
+                    oversee the quality and installation of venue signage.
                 </p>
             </article>
             <section class="image-grid">
                 <figure class="w-full">
-                    <img src="./imgs/NY_SCOPE_Showguide.webp" alt="">
+                    <img src="./imgs/NY_SCOPE_Showguide.webp" alt="" loading="lazy" decoding="async">
                     <figcaption style="color: var(--bg-color); opacity: .95;">Showguide - NYC 2020</figcaption>
                 </figure>
-                <figure class="w-full grid" style="grid-template-rows: 1fr 1fr 1fr; aspect-ratio: unset;">
-                    <img style="grid-column: 2; grid-row: 1;" src="./imgs/MB_SCOPE_Showguide-2.webp" alt="">
-                    <img style="grid-column: 3; grid-row: 1;" src="./imgs/MB_SCOPE_Showguide-3.webp" alt="">
-                    <img style="grid-column: 4; grid-row: 1;" src="./imgs/MB_SCOPE_Showguide-3.webp" alt="">
+                <figure class="w-full grid" style="grid-template-rows: 1fr 1fr 1fr;">
+                    <img style="grid-column: 2; grid-row: 1;" src="./imgs/MB_SCOPE_Showguide-2.webp" alt=""
+                        loading="lazy" decoding="async">
+                    <img style="grid-column: 3; grid-row: 1;" src="./imgs/MB_SCOPE_Showguide-3.webp" alt=""
+                        loading="lazy" decoding="async">
+                    <img style="grid-column: 4; grid-row: 1;" src="./imgs/MB_SCOPE_Showguide-3.webp" alt=""
+                        loading="lazy" decoding="async">
                 </figure>
                 <figure class="w-full grid">
                     <img style="grid-column: 2 / 5; grid-row: 1;" src="./imgs/SNY20_showguide_mockup_Lighting.webp"
-                        alt="">
-                    <img style="grid-column: 1 / 3; grid-row: 2;" src="./imgs/IMG_20191220_090826.webp" alt="">
+                        alt="" loading="lazy" decoding="async">
+                    <img style="grid-column: 1 / 3; grid-row: 2;" src="./imgs/IMG_20191220_090826.webp" alt=""
+                        loading="lazy" decoding="async">
+                    <img style="grid-column: 4 / 5; grid-row: 3; margin-bottom: 64px"
+                        src="./imgs/scope-art-show-2023-1024x747.webp" alt="" loading="lazy" decoding="async">
                 </figure>
                 <figure class="w-full">
-                    <img src="./imgs/SNY20_ad_animation_flicker_sm.gif" alt="">
+                    <img src="./imgs/SNY20_ad_animation_flicker_sm.webp" alt="" loading="lazy" decoding="async">
                 </figure>
             </section>
         </div>
         <section id="about">
             <section>
                 <h2>About<br>Me</h2>
-                <p>I'm an artist and creative, who's passions lie in art making and technology. Currently living and
-                    working
-                    in Brooklyn, NY. I'm a graduate from the University of Vermont, with a dual major of studio art and
-                    computer science. My interests include but definitely are not limited to, art, skateboarding and
-                    cooking. I strive to be unique and genuine in all that I do.
+                <p>I’m a creative designer, developer, and artist working in Brooklyn, NY. After graduating from the
+                    University of Vermont with a dual major in studio art and computer science, I’ve worked in a variety
+                    of roles primarily in the ad tech industry and art world. I value bringing an authentic, distinctive
+                    perspective to every project I start. I'm a true problem solver at heart and can't help but want to
+                    fix, tinker, and create. Outside of work, my passions include studio arts, skateboarding,
+                    woodworking, and cooking.
+                    <br>
+                    <br>
+                    I appreciate the time you spent here.
+                    <br>
+                    <br>
                     <br>
                     <br>
                     SQKZ - Riley Hoff
                 </p>
             </section>
             <figure>
-                <img src="./imgs/profile_iceland-6.jpg" alt="">
+                <img src="./imgs/profile_iceland-6.webp" alt="" loading="lazy" decoding="async">
             </figure>
             <figure>
-                <img src="./imgs/profile_rileyhoff_2.avif" alt="">
+                <img src="./imgs/profile_rileyhoff_2.avif" alt="" loading="lazy" decoding="async">
             </figure>
             <div class="email"><a href="mailto:rileyhoff@outlook.com">rileyhoff@outlook.com</a></div>
             <footer>
-                <?xml version="1.0" encoding="UTF-8"?>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1325 555.92">
                     <g>
                         <path
@@ -219,6 +281,68 @@
         </section>
     </section>
     <script>
+        const videos = document.querySelectorAll('video[data-src]');
+        const manuallyPausedVideos = new WeakSet();
+        const loadVideo = (video) => {
+            if (video.hasAttribute('src')) return;
+            video.src = video.dataset.src;
+            video.load();
+        };
+        const playVideo = (video) => {
+            loadVideo(video);
+            if (!video.paused) return;
+            video.play().catch((error) => {
+                if (error.name !== 'AbortError') {
+                    console.error('Portfolio video playback failed.', error);
+                }
+            });
+        };
+        videos.forEach((video) => {
+            const player = video.closest('.video-player');
+            video.tabIndex = 0;
+            video.setAttribute('aria-label', 'Video preview. Press Enter or Space to toggle playback.');
+            player.classList.toggle('is-paused', video.paused);
+            video.addEventListener('play', () => player.classList.remove('is-paused'));
+            video.addEventListener('pause', () => player.classList.add('is-paused'));
+
+            const togglePlayback = () => {
+                if (video.paused) {
+                    manuallyPausedVideos.delete(video);
+                    playVideo(video);
+                } else {
+                    manuallyPausedVideos.add(video);
+                    video.pause();
+                }
+            };
+
+            player.addEventListener('click', togglePlayback);
+            video.addEventListener('keydown', (event) => {
+                if (event.key !== 'Enter' && event.key !== ' ') return;
+                event.preventDefault();
+                togglePlayback();
+            });
+        });
+        const updateVideoPlayback = () => {
+            if (document.hidden || document.documentElement.classList.contains('intro-active')) {
+                videos.forEach((video) => video.pause());
+                return;
+            }
+
+            videos.forEach((video) => {
+                const bounds = video.getBoundingClientRect();
+                const isNearViewport = bounds.width > 0
+                    && bounds.height > 0
+                    && bounds.bottom >= -300
+                    && bounds.top <= window.innerHeight + 300;
+
+                if (isNearViewport && !manuallyPausedVideos.has(video)) {
+                    playVideo(video);
+                } else {
+                    video.pause();
+                }
+            });
+        };
+
         let activeGridImage;
         let imagePlaceholder;
         let isClosingImage = false;
@@ -351,6 +475,7 @@
             introSplash.classList.add('is-dismissed');
             introSplash.setAttribute('aria-hidden', 'true');
             mainGrid.inert = false;
+            updateVideoPlayback();
             if (!isDismissingIntro) updateMobileProjectReveal();
             if (shouldFocus) {
                 const firstProjectTitle = firstProject.querySelector('h2');
@@ -589,6 +714,7 @@
                 updateActiveProject();
                 updateHeaderVisibility();
                 updateStickyProjectTitle();
+                updateVideoPlayback();
                 isScrollingDown = false;
                 scrollUpdatePending = false;
             });
@@ -599,13 +725,16 @@
             updateActiveProject();
             updateHeaderVisibility();
             updateStickyProjectTitle();
+            updateVideoPlayback();
             if (!mobileViewport.matches) {
                 setWorksSubnavOpen(false);
             }
         });
+        document.addEventListener('visibilitychange', updateVideoPlayback);
         updateHeaderVisibility();
         updateActiveProject();
         updateStickyProjectTitle();
+        updateVideoPlayback();
 
         function scroll2top() {
             document.body.scrollTop = 0; // For Safari
