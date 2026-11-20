@@ -27,6 +27,10 @@
 </head>
 
 <body id="body" class="">
+    <section class="intro-splash" id="intro-splash" aria-label="Portfolio introduction">
+        <img class="intro-splash-logo" src="./imgs/sqkz_1.svg" alt="SQKZ">
+        <a class="intro-splash-link" href="#art">Works <span aria-hidden="true">&#8595;</span></a>
+    </section>
     <div class="sticky-project-title"></div>
     <section id="main-grid">
         <header>
@@ -45,7 +49,8 @@
                 </div>
             </div>
             <div class="about-nav"><a class="nav-trigger" href="#about">About Me</a></div>
-            <div><a class="nav-trigger" href="./resume.html" target="_blank">Resumé &#8599;</a></div>
+            <div><a class="nav-trigger" href="./resume.html" target="_blank">Resumé <span
+                        class="external-link-arrow">&#8599;</span></a></div>
         </nav>
         <div id="art" class="project">
             <article>
@@ -54,14 +59,14 @@
                     <div>Studio Art</div>
                     <div>Fullstack design & development</div>
                 </div>
-                <p> A website built to showcase my paintings, drawings, and other art projects. Designed and coded from
-                    scratch, utilizing HTML, CSS, JavaScript, and PHP. The primary goal was to create a clean and
-                    user-friendly environment for visitors to explore my artwork. Additionally, I incorporated an
-                    interactive introduction page, that reacts to the user's mouse movement, in hopes of deviating from
-                    conventional templated websites to infuse creativity directly into the site's design. While the site
-                    serves as a means for contacting me and inquiring about specific pieces, these functionalities were
-                    intentionally kept secondary in the design, allowing the focus to remain on the artwork itself. </p>
-                <button class="button"><a href="https://sqkz.art" target="_blank">Visit Site &#8599;</a></button>
+                <p> A website built to showcase my paintings, drawings, and other art projects. Designed and coded
+                    independently.
+                    In addition to showcasing my artwork, the site
+                    serves as a means for contacting me and inquiring about specific pieces. These functionalities were
+                    intentionally kept secondary in the design, allowing the focus to remain on the artworks; differing
+                    from typical e-commerce design.</p>
+                <button class="button"><a href="https://sqkz.art" target="_blank">Visit Site <span
+                            class="external-link-arrow">&#8599;</span></a></button>
             </article>
             <section class="image-grid">
                 <figure class="w-full grid">
@@ -100,7 +105,8 @@
                     Maintiains hight standards of load times while retaining funciontality similar to agency mocks. </p>
                 <button class="button"><a
                         href="https://preview.nativo.com/fortune.com-v2/articlepage.html?ntv_cccta=VGcDAAAAAAAAAAAAAAAAWIEVA&prx_ro=s"
-                        target="_blank">Visit Interactive Preview &#8599;</a></button>
+                        target="_blank">Visit Interactive Preview <span
+                            class="external-link-arrow">&#8599;</span></a></button>
             </article>
             <section class="image-grid">
                 <figure class="w-full mbl">
@@ -121,7 +127,7 @@
                     tv monarch campaign. </p>
                 <button class="button"><a
                         href=https://preview.nativo.com/life360/focus-mode.html?ntv_cccta=2qcDAAAAAAAAAAAAAAAAd_0hA&prx_ro=s&ntv_opt=100164"
-                        target="_blank">View Demo &#8599;</a></button>
+                        target="_blank">View Demo <span class="external-link-arrow">&#8599;</span></a></button>
             </article>
             <section class="image-grid">
                 <figure class="w-full desktop">
@@ -142,14 +148,15 @@
                 </div>
                 <p>
 
-                    INSCOPE (Formerly SCOPE) is an International Contemporary Art show, focusing on showcasing premier art galleries in the
-                    contemporary art space. INSCOPE has garnered extensive critical acclaim with cumulative sales well
-                    over one billion dollars and attendance of 1.2 million visitors. Their last Miami beach show greeted
-                    over 70,000 visitors. I worked as a design associate, alongside the Head of design and Director of
-                    INSCOPE to create all print and digital deign materials for the 2019 Miami Beach and 2020 New York
+                    INSCOPE (Formerly SCOPE) is an International Contemporary Art show, focusing on showcasing premier
+                    art galleries in the
+                    contemporary art space. INSCOPE has garnered extensive critical acclaim with attendance of 1.2
+                    million total visitors. I worked as a design associate, alongside the Head of design and Director of
+                    INSCOPE to create all print and digital design materials for the 2019 Miami Beach and 2020 New York
                     shows. The work consisted of but was not limited to, ad campaigns, onsite print material design,
-                    signage throughout the show and web development. In addition, during weeks prior to the shows I
-                    worked onsite with out of house crews to oversee the quality and installation of onsite signage.
+                    signage throughout the show and web development. In weeks prior to the shows, I
+                    worked onsite with out of house crews and union members to oversee the quality and installation of
+                    onsite signage.
                 </p>
             </article>
             <section class="image-grid">
@@ -327,9 +334,99 @@
             }
         });
         const mainGrid = document.querySelector('#main-grid');
-        const nav = document.querySelector('nav');
+        const nav = document.querySelector('#main-grid > nav');
         const aboutSection = document.querySelector('#about');
-        const worksNav = document.querySelector('nav > div:first-of-type');
+        const introSplash = document.querySelector('#intro-splash');
+        const firstProject = document.querySelector('#art');
+        let isDismissingIntro = false;
+        let touchStartY = null;
+        const holdIntroScroll = () => {
+            if (document.documentElement.classList.contains('intro-active') && window.scrollY !== 0) {
+                window.scrollTo({ top: 0, behavior: 'instant' });
+            }
+        };
+
+        const finishIntro = (shouldFocus = false) => {
+            if (introSplash.classList.contains('is-dismissed')) return;
+            document.documentElement.classList.remove('intro-active');
+            window.removeEventListener('scroll', holdIntroScroll);
+            introSplash.classList.add('is-dismissed');
+            introSplash.setAttribute('aria-hidden', 'true');
+            mainGrid.inert = false;
+            if (shouldFocus) {
+                const firstProjectTitle = firstProject.querySelector('h2');
+                firstProjectTitle.tabIndex = -1;
+                firstProjectTitle.focus({ preventScroll: true });
+            }
+        };
+
+        const dismissIntro = () => {
+            if (isDismissingIntro || introSplash.classList.contains('is-dismissed')) return;
+            isDismissingIntro = true;
+            window.removeEventListener('scroll', holdIntroScroll);
+            introSplash.classList.add('is-leaving');
+            firstProject.scrollIntoView({
+                behavior: 'instant',
+                block: 'start'
+            });
+            setTimeout(() => finishIntro(true), 850);
+        };
+
+        mainGrid.inert = true;
+        const mobileViewport = window.matchMedia('(max-width: 767px)');
+        if (!mobileViewport.matches || window.location.hash || window.scrollY > 0) {
+            finishIntro();
+        } else {
+            document.documentElement.classList.add('intro-active');
+            window.addEventListener('scroll', holdIntroScroll, { passive: true });
+            introSplash.querySelector('.intro-splash-link').addEventListener('click', (event) => {
+                event.preventDefault();
+                dismissIntro();
+            });
+
+            window.addEventListener('wheel', (event) => {
+                if (introSplash.classList.contains('is-dismissed')) return;
+                event.preventDefault();
+                if (event.deltaY > 0) {
+                    dismissIntro();
+                }
+            }, { passive: false });
+
+            introSplash.addEventListener('touchstart', (event) => {
+                touchStartY = event.touches[0].clientY;
+            }, { passive: true });
+
+            introSplash.addEventListener('touchmove', (event) => {
+                event.preventDefault();
+                if (touchStartY !== null && touchStartY - event.touches[0].clientY > 12) {
+                    dismissIntro();
+                }
+            }, { passive: false });
+
+            introSplash.addEventListener('touchend', () => {
+                touchStartY = null;
+            });
+
+            introSplash.addEventListener('transitionend', (event) => {
+                if (event.target === introSplash && event.propertyName === 'transform') {
+                    finishIntro(true);
+                }
+            });
+
+            window.addEventListener('keydown', (event) => {
+                if (!['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(event.key)
+                    || introSplash.classList.contains('is-dismissed')) return;
+                event.preventDefault();
+                if (['ArrowDown', 'PageDown', ' '].includes(event.key)) {
+                    dismissIntro();
+                }
+            });
+        }
+        mobileViewport.addEventListener('change', (event) => {
+            if (!event.matches) finishIntro();
+        });
+
+        const worksNav = document.querySelector('#main-grid > nav > div:first-of-type');
         const worksTrigger = worksNav.querySelector('.nav-trigger');
         const worksSubnav = document.querySelector('.subnav.works');
         const aboutNav = document.querySelector('.about-nav');
@@ -469,6 +566,7 @@
             isScrollingDown = false;
             previousScrollY = window.scrollY;
             updateActiveProject();
+            updateHeaderVisibility();
             updateStickyProjectTitle();
             updateWorksSubnavWidth();
             if (!window.matchMedia('(max-width: 767px)').matches) {
