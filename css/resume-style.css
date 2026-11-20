@@ -165,7 +165,7 @@ h3 {
 section .date {
     font-family: var(--body-font);
     font-size: 14px;
-    font-weight: 200;
+    font-weight: 300;
     margin: 0;
     padding: 0 0 0 12px;    
     color: var(--primary-color);
@@ -175,7 +175,7 @@ section ul {
     font-family: var(--body-font);
     font-size: 14px;
     line-height: 18px;
-    font-weight: 200;
+    font-weight: 300;
     color: var(--primary-color);
     padding: 0 0 0 48px;
     margin: 24px 0 0;
