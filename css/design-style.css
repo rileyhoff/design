@@ -884,7 +884,7 @@ footer svg {
         flex: 0 0 78vw;
         width: 78vw;
         max-width: 78vw;
-        scroll-snap-align: start;
+        scroll-snap-align: center;
     }
 
     .project .image-grid > figure.grid {
