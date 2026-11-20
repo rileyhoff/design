@@ -582,6 +582,8 @@ body.image-expanded.image-closing::after {
     margin: 5% auto;
     width: 50%;
     max-width: 300px;
+    border-radius: 24px;
+    overflow: hidden;
 }
 
 .video-player video {
