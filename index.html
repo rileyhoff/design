@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>&#10023; SQKZ Design &#10023;</title>
+    <title>SQKZ Design &#10023; Riley Hoff</title>
     <meta charset="utf-8">
     <meta name="author" content="Riley Hoff">
     <meta name="description" content="Riley Hoff - Art, design, and development portfolio">
@@ -25,17 +25,14 @@
 </head>
 
 <body>
-    <section class="intro-splash" id="intro-splash" aria-label="Portfolio introduction">
-        <img class="intro-splash-logo" src="./imgs/sqkz_1.svg" alt="SQKZ">
-        <a class="intro-splash-link" href="#art">Works <span aria-hidden="true">&#8595;</span></a>
-    </section>
     <div class="sticky-project-title"></div>
     <section id="main-grid">
-        <header>
-            <div class="logo" onclick="scroll2top();">
+        <header id="top">
+            <a class="logo" href="#art" aria-label="SQKZ — back to top">
                 <img src="./imgs/sqkz_1.svg" alt="SQKZ">
-            </div>
+            </a>
         </header>
+        <a class="mobile-works-link" href="#art">Works <span aria-hidden="true">&#8595;</span></a>
         <nav>
             <div class="active"><a class="nav-trigger" href="#art" aria-controls="works-subnav"
                     aria-expanded="false">Works</a>
@@ -327,7 +324,7 @@
             });
         });
         const updateVideoPlayback = () => {
-            if (document.hidden || document.documentElement.classList.contains('intro-active')) {
+            if (document.hidden) {
                 videos.forEach((video) => video.pause());
                 return;
             }
@@ -462,46 +459,6 @@
         const mainGrid = document.querySelector('#main-grid');
         const nav = document.querySelector('#main-grid > nav');
         const aboutSection = document.querySelector('#about');
-        const introSplash = document.querySelector('#intro-splash');
-        const firstProject = document.querySelector('#art');
-        let isDismissingIntro = false;
-        let touchStartY = null;
-        const holdIntroScroll = () => {
-            if (document.documentElement.classList.contains('intro-active') && window.scrollY !== 0) {
-                window.scrollTo({ top: 0, behavior: 'instant' });
-            }
-        };
-
-        const finishIntro = (shouldFocus = false) => {
-            if (introSplash.classList.contains('is-dismissed')) return;
-            document.documentElement.classList.remove('intro-active');
-            window.removeEventListener('scroll', holdIntroScroll);
-            introSplash.classList.add('is-dismissed');
-            introSplash.setAttribute('aria-hidden', 'true');
-            mainGrid.inert = false;
-            updateVideoPlayback();
-            if (!isDismissingIntro) updateMobileProjectReveal();
-            if (shouldFocus) {
-                const firstProjectTitle = firstProject.querySelector('h2');
-                firstProjectTitle.tabIndex = -1;
-                firstProjectTitle.focus({ preventScroll: true });
-            }
-        };
-
-        const dismissIntro = () => {
-            if (isDismissingIntro || introSplash.classList.contains('is-dismissed')) return;
-            isDismissingIntro = true;
-            updateMobileProjectReveal();
-            window.removeEventListener('scroll', holdIntroScroll);
-            introSplash.classList.add('is-leaving');
-            firstProject.scrollIntoView({
-                behavior: 'instant',
-                block: 'start'
-            });
-            setTimeout(() => finishIntro(true), 850);
-        };
-
-        mainGrid.inert = true;
         const mobileViewport = window.matchMedia('(max-width: 767px)');
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
         let hasScrolledCarousel = [...document.querySelectorAll('.project .image-grid')]
@@ -574,10 +531,6 @@
             const shouldReveal = mobileViewport.matches
                 && !reducedMotion.matches
                 && 'IntersectionObserver' in window;
-            if (shouldReveal) {
-                firstProject.querySelectorAll('article')
-                    .forEach((content) => content.classList.add('is-revealed'));
-            }
             document.documentElement.classList.toggle('mobile-project-reveal', shouldReveal);
             if (!shouldReveal) return;
 
@@ -594,56 +547,8 @@
                 .forEach((content) => projectRevealObserver.observe(content));
         };
 
-        if (!mobileViewport.matches || window.location.hash || window.scrollY > 0) {
-            finishIntro();
-        } else {
-            document.documentElement.classList.add('intro-active');
-            window.addEventListener('scroll', holdIntroScroll, { passive: true });
-            introSplash.querySelector('.intro-splash-link').addEventListener('click', (event) => {
-                event.preventDefault();
-                dismissIntro();
-            });
-
-            window.addEventListener('wheel', (event) => {
-                if (introSplash.classList.contains('is-dismissed')) return;
-                event.preventDefault();
-                if (event.deltaY > 0) {
-                    dismissIntro();
-                }
-            }, { passive: false });
-
-            introSplash.addEventListener('touchstart', (event) => {
-                touchStartY = event.touches[0].clientY;
-            }, { passive: true });
-
-            introSplash.addEventListener('touchmove', (event) => {
-                event.preventDefault();
-                if (touchStartY !== null && touchStartY - event.touches[0].clientY > 12) {
-                    dismissIntro();
-                }
-            }, { passive: false });
-
-            introSplash.addEventListener('touchend', () => {
-                touchStartY = null;
-            });
-
-            introSplash.addEventListener('transitionend', (event) => {
-                if (event.target === introSplash && event.propertyName === 'transform') {
-                    finishIntro(true);
-                }
-            });
-
-            window.addEventListener('keydown', (event) => {
-                if (!['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(event.key)
-                    || introSplash.classList.contains('is-dismissed')) return;
-                event.preventDefault();
-                if (['ArrowDown', 'PageDown', ' '].includes(event.key)) {
-                    dismissIntro();
-                }
-            });
-        }
-        mobileViewport.addEventListener('change', (event) => {
-            if (!event.matches) finishIntro();
+        updateMobileProjectReveal();
+        mobileViewport.addEventListener('change', () => {
             loadMobileCarouselImages();
             updateMobileProjectReveal();
             updateCarouselScrollCues();
@@ -806,11 +711,6 @@
         updateActiveProject();
         updateStickyProjectTitle();
         updateVideoPlayback();
-
-        function scroll2top() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-        } 
     </script>
 </body>
 
